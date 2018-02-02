@@ -21,12 +21,28 @@
 		color: white; }
 
 /*-----*/
+
+#firma {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto; 
+	height: 50px; 
+	padding: 0; 
+	overflow:hidden; 
+	position: absolute; 
+	left: 0; 
+	right: 0; }
+#sigueme {
+	text-align: center;
+	margin: auto auto;
+	color: white;
+	font-family: 'Fira Sans', 'Open Sans', sans-serif; }
+	#sigueme a { color: white; text-decoration: none; margin: 0 0.2rem; }
+
+/*----*/
+
 .text-shadow-1 { text-shadow: 0px 0px 5px #000000;  }
 .text-fira { font-family: 'Fira Sans', 'Open Sans', sans-serif; }
 .text-pacifico { font-family: 'Pacifico', cursive; }
-#firma {
-	width: 100%; margin-left: auto; margin-right: auto; height: 50px; border: 0px white solid; padding: 0; overflow:hidden; position: absolute; left: 0; right: 0; }
-
-
 
 
