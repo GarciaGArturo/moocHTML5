@@ -1,0 +1,16 @@
+@font-face {
+      font-family: 'fontello';
+      src: url('.fontello.eot?13593011');
+      src: url('.fontello.eot?13593011#iefix') format('embedded-opentype'),
+           url('.fontello.woff?13593011') format('woff'),
+           url('.fontello.ttf?13593011') format('truetype'),
+           url('.fontello.svg?13593011#fontello') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+ 
+.icon-mail:before { content: '\e800'; } /* '' */
+.icon-emo-thumbsup:before { content: '\e804'; } /* '' */
+.icon-gplus-squared:before { content: '\f0d4'; } /* '' */
+.icon-twitter-squared:before { content: '\f304'; } /* '' */
+.icon-linkedin-squared:before { content: '\f30c'; } /* '' */

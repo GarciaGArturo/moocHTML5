@@ -3,7 +3,7 @@
 	font-family: 'Fira Sans', 'Open Sans', sans-serif;
 	font-weight: 200;
 	background-color: #025462;
-	background-image: url(img/fondo1.jpg);
+	background-image: url(../../img/fondo1.jpg);
 	background-size: cover;
 	background-attachment: fixed;
 	text-align: center;
@@ -37,7 +37,8 @@
 	margin: auto auto;
 	color: white;
 	font-family: 'Fira Sans', 'Open Sans', sans-serif; }
-	#sigueme a { color: white; text-decoration: none; margin: 0 0.2rem; }
+	#sigueme a { color: white; text-decoration: none; margin: 0 0 }
+	#sigueme .icon-2x { font-size: 2.5em; }
 
 /*----*/
 
