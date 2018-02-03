@@ -7,17 +7,19 @@ Entrega
 <meta charset="utf­8">
 <title>Herencia</title>
 <style>
+
 /*= 0111*/ #caja .cabecera h1 {color:red;}
 /*= 0102*/ #caja header h1 {color:yellow;}
 /*= 0011*/ .cabecera h1 {color:green;}
 /*= 0002*/ header h1 {color:pink;}
 /*= 0001*/ h1 {color:purple;}
+
 </style>
 </head>
 <body>
 <div id="caja">
 <header class="cabecera">
-<h1 style="color: black;">Cabecera: header</h1>
+<!--1000 --> <h1 style="color: black;">Cabecera: header</h1>
 </header>
 </div>
 </body>
