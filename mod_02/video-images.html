@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	<title>Imágenes y video</title>
+
+	<!-- Fuente externa -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+	<!-- fuente iterna -->
+	<link rel="stylesheet" href="fuente-fira.css">
+
+	<!-- Estilos generales -->
+	<link rel="stylesheet" href="ej-fuentes.css">
+
+	<style>
+		picture > img, object { width: 100%; }
+		section { border-bottom: 1px solid lightgray; padding-bottom: 50px; }
+
+		.video-responsive {
+			position: relative;
+			padding-bottom: 56.25%; /* 16/9 ratio */
+			padding-top: 30px; /* IE6 workaround*/
+			height: 0;
+			overflow: hidden;
+			}
+
+			.video-responsive iframe,
+			.video-responsive object,
+			.video-responsive embed {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			}
+	</style>
+
+</head>
+<body>
+	<div class="container">
+
+	<section>
+		<h1>Uso de Etiqueta <code>&lt;picture&gt;</code></h1>
+		<h2>Dependiendo del tamaño de pantalla se muestra una imagen diferente.</h2>
+		<h4>(Prueba cambiando el tamaño del navegador)</h4>
+		<picture>
+			<source  
+				media="(min-width: 1000px)" 
+				srcset="perro-1024x768.jpg">
+			<source 
+				media="(min-width: 800px)" 
+				srcset="perro-800x600.jpg">
+			<source 
+				media="(min-width: 600px)" 
+				srcset="perro-600x400.jpg">
+			<source 
+				media="(min-width: 480px)" 
+				srcset="perro-480x360.jpg">
+		  <source 
+		  	media="(min-width: 320px)" 
+		  	srcset="perro-320-240.jpg">
+		  
+		  <img src="perro-120x120.jpg" alt="Perros">
+		</picture>
+	</section>
+	<section>
+		<h1>Inserción de Video de Youtube</h1>
+		<h2>También es responsivo</h2>
+		<div class="video-responsive">
+			<iframe  src="https://www.youtube.com/embed/zHDLUbssMIw" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+		</div>
+	</section>
+	<section>
+		<h1>Inserción de objeto SVG</h1>
+		<h2>También es responsivo</h2>
+		<img width="100%" src="coloured_pencils.svg"></img>
+	</section>
+
+	<footer>
+		<iframe id="firma" src="https://garciagarturo.github.io/moocHTML5/firma.html" frameborder="0" scrolling="no"></iframe>
+	</footer>
+</div>
+	
+</body>
+</html>
