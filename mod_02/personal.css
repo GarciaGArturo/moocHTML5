@@ -1,0 +1,36 @@
+body { /* ***** ---- Todo el documento es Fira Sans */
+	background-image: url('https://garciagarturo.neocities.org/ej5mod1/bg-stone.png');
+	background-repeat: repeat-x;
+	background-color: #f9f9f9;
+	padding: 3% 8%;
+	font-family: 'FiraSans-UltraLight';
+}
+blockquote { /* ***** ---- Aquí se usa Roboto */
+	font-family: 'Roboto', sans-serif;
+	color: #444;
+	font-style: italic;
+	box-shadow: 0px 8px 15px -5px #444;
+	padding: 1em;
+}
+.container {
+	margin: auto auto;
+	min-width: 265px;
+	max-width: 50rem;
+}
+h3 {
+	background: #fdfdfd;
+	padding: .7em;
+	font-size: 1.5em;
+	color: steelblue;
+	font-family: 'FiraSans-Medum';
+}
+h1 { color: #20679e; }
+article { 
+	display: block;
+	overflow: hidden;
+	border-bottom: 1px solid lightgray;
+	padding-bottom: 3rem;
+}
+footer { text-align: center; }
+
+

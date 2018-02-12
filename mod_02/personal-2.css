@@ -1,0 +1,85 @@
+body { /* ***** ---- Todo el documento es Fira Sans */
+	background-image: url('https://garciagarturo.neocities.org/ej5mod1/bg-stone.png');
+	background-repeat: repeat-x;
+	background-color: #f9f9f9;
+	padding: 3% 8%;
+	font-family: 'FiraSans-UltraLight';
+	}
+.container {
+	margin: auto auto;
+	min-width: 265px;
+	max-width: 50rem;
+	}
+h1 { color: #20679e; }
+h3 {
+	background: #fdfdfd;
+	padding: .7em;
+	font-size: 1.5em;
+	color: steelblue;
+	font-family: 'FiraSans-Medum';
+	box-shadow: 0 0.3em .4em .01em #ccc;
+	}
+header {
+		display: flex; 
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: center;
+		align-content: space-around;
+		}
+		header img { 
+			border-radius: 50%; 
+			max-width: 250px;
+			}
+		header .foto { text-align: center; }
+.divisor {
+		border-bottom: 0.065rem solid lightgray;
+		padding-bottom: 3em;
+	}
+#galeria .fotos {
+	display: flex; 
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: space-around;
+	}
+	#galeria img {
+		margin: 0.12rem;
+	}
+.video-responsive {
+	position: relative;
+	padding-bottom: 56.25%; /* 16/9 ratio */
+	padding-top: 30px; /* IE6 workaround*/
+	height: 0;
+	overflow: hidden;
+	}
+	.video-responsive iframe,
+	.video-responsive object,
+	.video-responsive embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		}
+#wikipedia .caja {
+	display: flex; 
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: center;
+	}
+	#wikipedia p, #wikipedia img { flex-basis: 320px; }
+	#about blockquote { background: linear-gradient(white, lightgray); }
+	#about small { font-family: 'FiraSans-UltraLight', fira, Verdana; }
+	#about li { margin-left: -25px }
+blockquote { /* ***** ---- Aquí se usa Roboto */
+	font-family: 'Roboto', sans-serif;
+	color: #444;
+	font-style: italic;
+	box-shadow: 0px 8px 15px -5px #444;
+	padding: 1em;
+}
+footer { text-align: center; }
