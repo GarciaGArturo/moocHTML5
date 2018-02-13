@@ -7,7 +7,8 @@ Modulo 3:
 > Ampliar la siguiente aplicación Web (muestra la fecha y la hora):
 
 ```HTML
- <!DOCTYPE html><html>
+<!DOCTYPE html>
+<html>
 <head>
   <title>Date</title>
   <meta charset="UTF-8">
@@ -38,19 +39,16 @@ Incluyendo los siguientes elementos:
 1. El nombre de la persona que hace la entrega debajo del titulo `<h1>`
 2. Un bloque `<div>` debajo de la fecha y la hora y las instrucciones JavaScript necesarias para que muestre en dicho bloque el contenido de las siguientes propiedades DOM  en líneas separadas, que comiencen por el nombre de la propiedad(es) mostrada(s):
 
-	a. Contenido de innerHTML de elemento identificado por id="h2"
-	b. Contenido de outerHTML de elemento identificado por id="h1"
-	c. Contenido de de la propiedad global: location.href
-	d. Contenido de de la propiedad global: location
-	e. Contenido de de las propiedades globales: screen.width y screen.heigth
+	- Contenido de innerHTML de elemento identificado por id="h2"
+	- Contenido de outerHTML de elemento identificado por id="h1"
+	- Contenido de de la propiedad global: location.href
+	- Contenido de de la propiedad global: location
+	- Contenido de de las propiedades globales: screen.width y screen.heigth
 
 ## Entrega:
 
-El texto general está en fuente **Fira** y los párrafos de la _moraleja_ están con fuente **Roboto**.
-
 - [Vista Previa](https://garciagarturo.github.io/moocHTML5/mod_03/fecha.html)
 
----
 
 .
 .
