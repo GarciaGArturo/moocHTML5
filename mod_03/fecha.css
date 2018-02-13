@@ -1,0 +1,60 @@
+body {
+	background-image: url('https://garciagarturo.neocities.org/ej5mod1/bg-stone.png');
+	background-repeat: repeat-x;
+	background-color: #f9f9f9;
+	padding: 2% 5%;
+	font-family: 'FiraSans-Regular';
+	color: #444;
+}
+h1 {
+	color: #69c;
+}
+h3 {
+	padding: .3em;
+	font-size: 1em;
+	color: steelblue;
+	font-family: 'FiraSans-UltraLight';
+	text-shadow: 0 2px 2px #606060;
+}
+h5 {
+	font-family: 'FiraSans-UltraLight';
+}
+#p1, #p2, #p3, #p4, #p5, #p6 {
+	background: #fdfdfd;
+	padding: .2em .5em .2em 0.8em;
+	box-shadow: 0 2px 5px 1px #999;
+	margin-bottom: 4em;
+}
+#p3, #p4, #p6 {
+	font-family: monospace, Times, serif;
+}
+#fecha {
+	border-bottom: 0.01rem solid #bdcaa0;
+	margin-bottom: 2em;
+}
+
+/*Fuentes descargadas*/
+@font-face{
+    font-family: 'FiraSans-UltraLight';
+    src: url('https://garciagarturo.github.io/moocHTML5/mod_02/fuentes/FiraSans-UltraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'FiraSans-Regular';
+    src: url('https://garciagarturo.github.io/moocHTML5/mod_02/fuentes/FiraSans-Regular.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'FiraSans-Medum';
+    src: url('https://garciagarturo.github.io/moocHTML5/mod_02/fuentes/FiraSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'FiraSans-Light';
+    src: url('https://garciagarturo.github.io/moocHTML5/mod_02/fuentes/FiraSans-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html><html>
+<head>
+  <title>Date</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="shortcut icon" href="https://garciagarturo.neocities.org/ej5mod1/favicon-ff.ico" />
+  <link rel="stylesheet" href="https://garciagarturo.github.io/moocHTML5/mod_02/fuente-fira.css">
+  <link rel="stylesheet" href="fecha.css">
+</head>
+<body>
+  <h1 id="h1"></h1>
+  <h3 id="nombre"></h3>
+  <h2 id="h2">La fecha y la hora son:</h2>
+  <div id="fecha"></div>
+
+  <!-- Aquí aparecen los resultados -->
+  <div id="tarea"> 
+    <h5>A continuación el Contenido de <em>innerHTML</em> de elemento identificado por <em>id="h2"</em></h5>
+    <p id="p1"></p>
+
+    <h5>A continuación el Contenido de <em>outerHTML</em> de elemento identificado por <em>id="h1"</em></h5>
+    <p id="p2"></p>
+
+    <h5>A continuación el Contenido de de la propiedad global: <em>location.href</em></h5>
+    <p id="p3"></p>
+
+    <h5>A continuación el Contenido de de la propiedad global: <em>location</em></h5>
+    <p id="p4"></p>
+
+    <h5>A continuación el Contenido de de la propiedad global: <em>screen.width</em></h5>
+    <p id="p5"></p>
+
+    <h5>A continuación el Contenido de de la propiedad global: <em>screen.heigth</em></h5>
+    <p id="p6"></p>
+  </div>
+
+  <!-- Script original que devuelve la fecha -->
+  <script type="text/javascript">
+    var fecha = new Date();
+    var msj;
+
+    if      (fecha.getHours() < 7)  { msj = "Buenas noches";}
+    else if (fecha.getHours() < 12) { msj = "Buenos días";}
+    else if (fecha.getHours() < 21) { msj = "Buenas tardes";}
+    else                                          { msj = "Buenas noches";}
+
+    document.getElementById("h1").innerHTML    = msj;
+    document.getElementById("fecha").innerHTML = fecha;
+  </script>
+  
+  <!-- Script de la tarea que extrae los valores -->
+  <script>
+    var $nombre_autor = "Arturo García";
+    document.getElementById("nombre").innerHTML = "<em>Entregado por: </em>" + $nombre_autor;
+
+    $h2 = document.getElementById("h2");
+    $h1 = document.getElementById("h1");
+    
+    document.getElementById("p1").innerHTML = $h2.outerHTML;
+    document.getElementById("p2").innerHTML = $h1.outerHTML;
+
+    document.getElementById("p3").innerHTML = location.href;
+    document.getElementById("p4").innerHTML = location;
+    document.getElementById("p5").innerHTML = screen.width;
+    document.getElementById("p6").innerHTML = screen.heigth;
+  </script>
+
+  <div class="codigo">
+    <h4>El código limpio se ve así:</h4>
+
+    <pre>
+&lt;body&gt;
+  &lt;h1 id="h1"&gt;&lt;/h1&gt;
+  &lt;h3 id="nombre"&gt;&lt;/h3&gt;
+  &lt;h2 id="h2"&gt;La fecha y la hora son:&lt;/h2&gt;
+  &lt;div id="fecha"&gt;&lt;/div&gt;
+
+    &lt;p id="p1"&gt;&lt;/p&gt;
+    &lt;p id="p2"&gt;&lt;/p&gt;
+    &lt;p id="p3"&gt;&lt;/p&gt;
+    &lt;p id="p4"&gt;&lt;/p&gt;
+    &lt;p id="p5"&gt;&lt;/p&gt;
+    &lt;p id="p6"&gt;&lt;/p&gt;
+
+  &lt;script type="text/javascript"&gt;
+    var fecha = new Date();
+    var msj;
+
+    if      (fecha.getHours() &lt; 7)  { msj = "Buenas noches";}
+    else if (fecha.getHours() &lt; 12) { msj = "Buenos días";}
+    else if (fecha.getHours() &lt; 21) { msj = "Buenas tardes";}
+    else                                          { msj = "Buenas noches";}
+
+    document.getElementById("h1").innerHTML    = msj;
+    document.getElementById("fecha").innerHTML = fecha;
+
+    &lt;!-- a partir de aquí la tarea --&gt;
+  
+    var $nombre_autor = "Arturo García";
+    document.getElementById("nombre").innerHTML = "&lt;em&gt;Entregado por: &lt;/em&gt;" + $nombre_autor;
+
+    $h2 = document.getElementById("h2");
+    $h1 = document.getElementById("h1");
+    
+    document.getElementById("p1").innerHTML = $h2.outerHTML;
+    document.getElementById("p2").innerHTML = $h1.outerHTML;
+
+    document.getElementById("p3").innerHTML = location.href;
+    document.getElementById("p4").innerHTML = location;
+    document.getElementById("p5").innerHTML = screen.width;
+    document.getElementById("p6").innerHTML = screen.heigth;
+  &lt;/script&gt;
+&lt;/body&gt;
+
+
+    </pre>
+  </div>
+
+  <footer>
+    <iframe id="firma" src="https://garciagarturo.github.io/moocHTML5/firma.html" frameborder="0" scrolling="no"></iframe>
+  </footer>
+
+</body>
+</html>
+<!-- 
+2) Un bloque <div> debajo de la fecha y la hora y las instrucciones JavaScript necesarias para que muestre en dicho bloque el contenido de las siguientes propiedades DOM  en líneas separadas, que comiencen por el nombre de la propiedad(es) mostrada(s):
+
+a) Contenido de innerHTML de elemento identificado por id="h2"
+b) Contenido de outerHTML de elemento identificado por id="h1"
+
+c) Contenido de de la propiedad global: location.href
+d) Contenido de de la propiedad global: location
+e) Contenido de de las propiedades globales: screen.width y screen.heigth
+ -->
