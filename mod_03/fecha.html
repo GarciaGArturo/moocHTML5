@@ -57,7 +57,7 @@
     $h1 = document.getElementById("h1");
     
     document.getElementById("p1").innerHTML = $h2.outerHTML;
-    document.getElementById("p2").innerHTML = $h1.outerHTML;
+    document.getElementById("p2").innerHTML = $h1.outerHTML.replace(/</g,"&lt;",/>/g,"&gt;") + '<br>' + $h1.outerHTML;
 
     document.getElementById("p3").innerHTML = location.href;
     document.getElementById("p4").innerHTML = location;
