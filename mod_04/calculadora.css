@@ -22,11 +22,14 @@ input {
 	width: 86%;
 	height: 2em;
 	font-size: 2em;
-	/*padding: .01em .1em .01em .2em;*/
 	border: 0.3em double lightgray;
 	overflow: hidden;
 	font-family: 'VT323', monospace;
 	text-align: right;
+	margin-bottom: 0.5em;
+	padding-right: 0.2em;
+	font-weight: lighter;
+	box-shadow: 0 0 13px 0px inset #c6c6c6;
 }
 .fila-1 button,
 .fila-2 button,
@@ -45,12 +48,13 @@ input {
 	font-family: monospace;
 	font-size: 2.5em;
 	height: 1.5em;
-	border-bottom: 3px solid lightgray;
-	border-right: 3px solid lightgray;
+	border-bottom: 2px solid #bcbcbc;
+	border-right: 2px solid #bcbcbc;
 	margin: 0.05em;
 	color: #777;
-	text-shadow: .8px .5px 0.5px #fff;
-	background-color: lightgray;
+	text-shadow: .8px .5px 0.7px #fff;
+	background-color: #cfcece;
+	border-radius: 5px;
 }
 .fila-4 button {
 	width: 93%;
