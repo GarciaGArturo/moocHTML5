@@ -1,0 +1,57 @@
+body {
+	
+}
+h1 {
+	text-align: center;
+	font-family: Verdana, Arial, sans-serif;
+	color: steelblue;
+	font-size: 80%;
+}
+footer {margin: auto; text-align: center;}
+#calc {
+	margin: 2% auto;
+	width: 279px;
+	border: 1px solid lightgray;
+	text-align: center;
+	padding: 10px;
+	background: white;
+	background: linear-gradient(#f0f0f0, white, #f0f0f0);
+	box-shadow: 0 6px 11px #aaa;
+}
+input {
+	width: 86%;
+	height: 2em;
+	font-size: 2em;
+	/*padding: .01em .1em .01em .2em;*/
+	border: 0.3em double lightgray;
+	overflow: hidden;
+	font-family: 'VT323', monospace;
+	text-align: right;
+}
+.fila-1 button,
+.fila-2 button,
+.fila-3 button
+ {
+	width: 30%;
+}
+.fila-1 button,
+.fila-2 button,
+.fila-3 button,
+.fila-4 button
+ {
+	margin: auto;
+	text-align: center;
+	display: inline;
+	font-family: monospace;
+	font-size: 3em;
+	height: 1.5em;
+	border-bottom: 3px solid lightgray;
+	border-right: 3px solid lightgray;
+	margin: 0.05em;
+	color: #777;
+	text-shadow: .8px .5px 0.5px #fff;
+	background-color: lightgray;
+}
+.fila-4 button {
+	width: 93%;
+}
