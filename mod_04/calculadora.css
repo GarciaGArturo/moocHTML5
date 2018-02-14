@@ -17,6 +17,7 @@ footer {margin: auto; text-align: center;}
 	background: white;
 	background: linear-gradient(#f0f0f0, white, #f0f0f0);
 	box-shadow: 0 6px 11px #aaa;
+	border-radius: 0.5em;
 }
 input {
 	width: 86%;
