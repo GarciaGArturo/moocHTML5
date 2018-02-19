@@ -1,0 +1,62 @@
+body { background-color: #222; }
+h1 {
+	text-align: center;
+	font-family: Verdana, Arial, sans-serif;
+	color: white;
+	font-size: 80%;
+}
+h1 > span { color: red; }
+footer {margin: auto; text-align: center;}
+#calc {
+	margin: 2% auto;
+	width: 279px;
+	border: 1px solid lightgray;
+	text-align: center;
+	padding: 10px;
+	background: white;
+	background: linear-gradient(#f0f0f0, white, #f0f0f0);
+	/*box-shadow: 0 6px 11px #aaa;*/
+	border-radius: 0.5em;
+}
+input {
+	width: 86%;
+	height: 2em;
+	font-size: 2em;
+	border: 0.3em double lightgray;
+	overflow: hidden;
+	font-family: monospace;
+	text-align: right;
+	margin-bottom: 0.5em;
+	padding-right: 0.2em;
+	font-weight: lighter;
+	box-shadow: 0 0 13px 0px inset #c6c6c6;
+	color: #444;
+}
+::-moz-placeholder {
+  opacity: 1;
+}
+input::placeholder {
+  color: #444;
+}
+#teclado button {
+	width: 30%;
+	text-align: center;
+	display: inline;
+	font-family: Verdana, monospace;
+	font-weight: normal;
+	font-size: 1.5em;
+	height: 2.5em;
+	border-bottom: 2px solid #bcbcbc;
+	border-right: 2px solid #bcbcbc;
+	margin: 0.05em;
+	color: #777;
+	text-shadow: .8px .5px 0.7px #fff;
+	background-color: #cfcece;
+	border-radius: 5px;
+}
+#teclado sub, #teclado sup {
+	font-size: 60%;
+}
+/*.fila-4 button {
+	width: 93%;
+}*/
