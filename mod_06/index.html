@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///0r/////////mf///w8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8E////Uf///zMAAAAAAAAAAAAAAAD////+AAAA/+Dg4P////9dAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////Df/////////O////OQAAAAD///9m2tra/ltbW//////E////MQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///w3/////YGBg/////87///8z////1wAAAP+xsbH/////hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8N/////wAAAP9GRkb/////2rS0tPZLS0v/////v////x3///8A////AP///wAAAAAAAAAAAAAAAAAAAAAA////Df////8AAAD/AAAA/wAAAP8AAAD/WFhY//////v////x////8f////H///8MAAAAAAAAAAAAAAAAAAAAAP///w3/////AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/1lZWf/////K////CgAAAAAAAAAAAAAAAAAAAAD///8N/////wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/3d3d/////+7////HwAAAAAAAAAAAAAAAAAAAAAAAAAA////Df////8AAAD/AAAA/wAAAP8AAAD/AAAA/3BwcP////+5////JwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///w3/////AAAA/wAAAP8AAAD/AAAA/0BAQP/////D////IwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8N/////wAAAP8AAAD/AAAA/wAAAP/////P////EgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////Df////8AAAD/AAAA/2FhYf/////S////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///w3/////AAAA/4SEhP////+/////GgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8N/////4WFhf////+5////JgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////Df////////+/////JgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///w3////S////GgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/w8AAMcPAADCDwAAwB8AAMADAADAAwAAwAMAAMAHAADADwAAwB8AAMA/AADAfwAAwP8AAMH/AADD/wAAx/8AAA==" rel="icon" type="image/x-icon">
+    <title>Menú con Bootstrap 4</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/darkly/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+      .text-oleo { font-family: 'Oleo Script', cursive; font-size: 2em; }
+      #contenido {
+        text-align: center;
+        padding: 1em;
+        font-size: 2em;
+      }
+      .navbar { padding: 0.1rem; }
+      .video-responsive {
+      position: relative;
+      padding-bottom: 56.25%; /* 16/9 ratio */
+      padding-top: 30px; /* IE6 workaround*/
+      height: 0;
+      overflow: hidden;
+      }
+      .video-responsive iframe,
+      .video-responsive object,
+      .video-responsive embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      }
+      .ancho-video { max-width: 25em; margin: auto auto; }
+    </style>
+
+    <script>
+      $(function() { 
+        $("#Wellcome").on("click", function(){ $("#contenido").html("<div class='ancho-video'><img class='img-fluid rounded' src='https://1.bp.blogspot.com/-6eLZJaDI3Uk/WV_qiftHgdI/AAAAAAAGiHY/bD0qI95nWJszSkAGI069p7u8T4G6oUaPQCLcBGAs/s1600/Welcome%2B%25289%2529.gif' alt='Welcome'></div>") } );
+        $("#Featured").on("click", function(){ $("#contenido").html("<div class='ancho-video'><img class='img-fluid rounded' src='http://i51.tinypic.com/5ed2mq.jpg' alt='Featured'></div>") } );
+        $("#People").on("click", function(){ $("#contenido").html("<div class='ancho-video'><img class='img-fluid rounded' src='http://epilepsyu.com/wp-content/uploads/2014/01/happy-people-1050x600.jpg' alt='People'></div>") } );
+        $("#Music").on("click", function(){ $("#contenido").html("<div class='ancho-video'><div class='video-responsive'><iframe src='https://www.youtube.com/embed/G8JdsW_Mdt0' frameborder='0' allowfullscreen='allowfullscreen'></iframe></div></div>") } );
+        $("#Rock").on("click", function(){ $("#contenido").html("<div class='ancho-video'><div class='video-responsive'><iframe src='https://www.youtube.com/embed/pES8SezkV8w' frameborder='0' allowfullscreen='allowfullscreen'></iframe></div></div>") } );
+        $("#Clasic").on("click", function(){ $("#contenido").html("<div class='ancho-video'><div class='video-responsive'><iframe src='https://www.youtube.com/embed/YofUPSyCrwo' frameborder='0' allowfullscreen='allowfullscreen'></iframe></div></div>") } );
+        $("#Sorpresa").on("click", function(){ $("#contenido").html("<div class='ancho-video'><div class='video-responsive'><iframe src='https://www.youtube.com/embed/l0XdDKwFe3k' frameborder='0' allowfullscreen='allowfullscreen'></iframe></div></div>") } );
+        $("#Mixes").on("click", function(){ $("#contenido").html("<div class='ancho-video'><div class='video-responsive'><iframe scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/86716652&amp;color=002dff'></iframe></div></div>") } );
+        $("#Video").on("click", function(){ $("#contenido").html("<div class='ancho-video'><div class='video-responsive'><iframe src='https://player.vimeo.com/video/37484978' width='100%' height='427' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></div>") } );
+        $("#Radio").on("click", function(){ $("#contenido").html("<div class='ancho-video'><div class='video-responsive'><iframe width='100%' height='300' scrolling='no' frameborder='no' allow='autoplay' src='https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/239882921&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'></iframe></div></div>") } );
+        $("#Logo").on("click", function(){ $("#contenido").html("<div class='ancho-video'><img class='img-fluid rounded' src='https://is4-ssl.mzstatic.com/image/thumb/Purple60/v4/05/48/ec/0548ecf4-9f56-9d40-db67-1657a5373e65/mzl.fgowkcky.png/1200x630bb.jpg' alt='Logo'></div>") } );
+      });
+
+    </script>
+    
+  </head>
+  <body>
+    <div class="container-fluyd">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container d-flex">
+          <a id="Logo" class="navbar-brand text-oleo" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a id="Wellcome" class="nav-link" href="#">Welcome <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a id="Featured" class="nav-link" href="#">Featured</a>
+              </li>
+              <li class="nav-item">
+                <a id="People" class="nav-link" href="#">People</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a id="Music" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Music
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a id="Rock" class="dropdown-item" href="#">Rock</a>
+                  <a id="Clasic" class="dropdown-item" href="#">Clasic</a>
+                  <div class="dropdown-divider"></div>
+                  <a id="Sorpresa" class="dropdown-item" href="#">Sorpresa</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a id="Mixes" class="nav-link" href="#">Mixes</a>
+              </li>
+              <li class="nav-item">
+                <a id="Video" class="nav-link" href="#">Video</a>
+              </li>
+              <li class="nav-item">
+                <a id="Radio" class="nav-link" href="#">Radio</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <header id="header">
+        <div id="contenido"><span class="text-oleo" style="font-size: 100%;">Hola<br>Puedes hacer click en los enlaces ;)</span></div>
+      </header>
+    </div>
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
