@@ -7,156 +7,36 @@
   <title>Calculadora con JQuewry</title>
   <link rel="stylesheet" href="calculadora.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="calc.js"></script>
 </head>
 
-<body onLoad="inic()">
+<body>
   <h1 id="h1"><span>Error al cargar</span></h1>
   <div id="calc">
     <input type="text" size="12" id="num" onClick="vaciar()" placeholder="0" type="number" autofocus>
     <div id="teclado">
 
-      <button onclick="cuadrado()" title="X elevado al cuadrado">x<sup>2</sup></button>
-      <button onClick="raizcuadrada()" title="Raíz cuadrada de X"><sup>2</sup>&#8730;</button>
-      <button onClick="limpiar()" title="Clear">C</button>
+      <button id="x2"       title="X elevado al cuadrado">x<sup>2</sup></button>
+      <button id="raiz"     title="Raíz cuadrada de X"><sup>2</sup>&#8730;</button>
+      <button id="clear"    title="Clear">C</button>
 
-      <button onclick="inverso()" title="Número inverso de X">1/x</button>
-      <button onClick="multiplica()" title="Multiplicación">x</button>
-      <button onClick="divide()" title="División">&#247;</button>
+      <button id="inverso"  title="Número inverso de X">1/x</button>
+      <button id="X"        title="Multiplicación">x</button>
+      <button id="div"      title="División">&#247;</button>
 
-      <button onClick="parte_entera()" title="Devuelve la parte entera positiva">Int</button>
-      <button onClick="mas()" title="Suma">+</button>
-      <button onClick="menos()" title="Resta">-</button>
+      <button id="ent"      title="Devuelve la parte entera positiva">Int</button>
+      <button id="mas"      title="Suma">+</button>
+      <button id="menos"    title="Resta">-</button>
 
-      <button onclick="factorial()" title="Resultado factorial de X">x!</button>
-      <button onClick="potencia_de_dos()" title="resultado de 2 a la X potencia">2<sup>X</sup></button>
-      <button onClick="eleva()" title="Eleva X a la potencia Y">x<sup>y</sup></button><br>
+      <button id="fact"     title="Resultado factorial de X">x!</button>
+      <button id="_2x"      title="resultado de 2 a la X potencia">2<sup>X</sup></button>
+      <button id="pot"      title="Eleva X a la potencia Y">x<sup>y</sup></button><br>
       
-      <button onclick="sumatoria()" title="Suma conjunto de números separados por coma">Σ<sub>n<sub>1</sub>,,,</sub><sub>n<sub>x</sub></sub></button>
-      <button onclick="producto()" title="Multiplica conjunto de números separados por coma">&Pi;<sub>n<sub>1</sub>,,,</sub><sub>n<sub>x</sub></sub></button>
-      <button onClick="calcular()" title="Calcula operación">=</button>
+      <button id="sumatoria" title="Suma conjunto de números separados por coma">Σ<sub>n<sub>1</sub>,,,</sub><sub>n<sub>x</sub></sub></button>
+      <button id="producto" title="Multiplica conjunto de números separados por coma">&Pi;<sub>n<sub>1</sub>,,,</sub><sub>n<sub>x</sub></sub></button>
+      <button id="calcula" title="Calcula operación">=</button>
       
     </div>
   </div>
-<footer></footer>
-
-<script>
-  // inicializa variables
-    var num, acc = 0, op = "";
-  // Prepara nuestra num
-    function inic() {num = $("#num"); num.value = ""; num.focus();}
-    // Limpia el input al hacer onClick
-    function vaciar() {
-      num.on("click", 
-        function(){ num.val(""); }
-          );
-      num.focus();
-    };
-    // Limpia el display y el acc
-    function limpiar() {
-      num.val("");
-      acc = 0;
-      num.focus();
-    };
-    // ¿Es un número?
-      function es_numero () {
-        esNumero = $.isNumeric( num.val() );
-        return esNumero;
-      }
-  // Operaciones unitarias
-    // Eleva al cuadrado
-    function cuadrado()  {
-      num.val(Math.pow(num.val(), 2));
-      num.focus();
-    }
-    // Raíz cuadrada
-    function raizcuadrada() {
-      num.val(Math.sqrt(num.val()));
-      num.focus();
-    }
-    // Inverso
-    function inverso() {
-      num.val(1 / num.val());
-      num.focus();
-    }
-    // Devuelve el entero positivo
-    function parte_entera() {
-      if (num.val() >= 0) {num.val(+Math.floor(num.val()));}
-      if (num.val() < 0) {num.val(-Math.ceil(num.val()));} 
-      num.focus();
-    }
-    // Potencia de 2
-      function potencia_de_dos()  {
-        num.val(Math.pow(2, num.val()));
-        num.focus();
-      }
-    // Factorial
-      function factorial() {
-        var res = num.val();
-        if (es_numero()) {
-
-          var cont = num.val();
-          cont--;
-          while( cont > 1 ) {
-            res*= cont--;
-          } 
-        } else {
-          res = "ERROR" ;
-        }
-        num.val( res );
-        num.focus();
-      }
-  // Operaciones CVS
-    // Sumatoria
-      function sumatoria() {
-        var lista = num.val().split(",");
-        var i = 0;
-        acc = 0;
-        while ( i < lista.length ) {
-          acc = acc + (+lista[i]);
-          i++;
-        }
-        num.val( acc );
-        num.focus();
-      }
-    // Producto
-      function producto() {
-        var lista = num.val().split(",");
-        var i = 0;
-        acc = 1;
-        while ( i < lista.length ) {
-          acc = acc * (+lista[i]);
-          i++;
-        }
-        num.val( acc );
-        num.focus();
-      }
-  // Operaciones binarias
-    function mas()        { acc = num.val();  op = "+"; vaciar(); }
-    function menos()      { acc = num.val();  op = "-"; vaciar(); }
-    function multiplica() { acc = num.val();  op = "x"; vaciar(); }
-    function divide()     { acc = num.val();  op = "d"; vaciar(); }
-    function eleva()      { acc = num.val();  op = "p"; vaciar(); }
-
-    function calcular() {
-      if (op === "+") { num.val( +acc + +num.val() ) }
-      if (op === "-") { num.val( +acc - +num.val() ) }
-
-      if (op === "x") { num.val( +acc * +num.val() ) }
-      if (op === "d") { num.val( +acc / +num.val() ) }
-      if (op === "p") { num.val( Math.pow(+acc, +num.val() ) ) }
-      num.focus();
-    }
-  // Script original que devuelve la fecha
-    var fecha = new Date();
-    var msj = "";
-
-    if      (fecha.getHours() < 7)  { msj = "Buenas noches";}
-    else if (fecha.getHours() < 12) { msj = "Buenos días";}
-    else if (fecha.getHours() < 21) { msj = "Buenas tardes";}
-    else                            { msj = "Buenas noches";}
-
-    $("#h1").html(msj + "<br>bienvenido a la calculadora de <em>Arturo García</em>");
-</script>
-
 </body>
 </html>
