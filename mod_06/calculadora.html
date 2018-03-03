@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="http://www.iconj.com/gif_icon.php?pid=uz36u4v6r9" type="image/gif" /> 
+
+  <title>Calculadora con JQuewry y Memoria</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet">
+  <link href="carousel.css" rel="stylesheet" >
+  <!-- Javascript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js" type="text/javascript"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" rel="stylesheet" >
+  <script src="carousel.js"></script>
+</head>
+
+<body>
+  <div class="container-fluyd">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container d-flex">
+        <a id="logo" class="navbar-brand text-oleo" href="carousel.html"> <i class="fas fa-angle-left"></i> Carrusel <i class="fas fa-angle-right"></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a id="Wellcome" class="nav-link" href="carousel.html"><i class="fas fa-home"></i> Inicio </a>
+            </li>
+            <li class="nav-item active">
+              <a id="calculadora" class="nav-link no-link" href="calculadora.html"><i class="fas fa-calculator"></i> Calculadora <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a id="puzzle" class="nav-link" href="puzzle.html"><i class="fas fa-puzzle-piece"></i> Puzzle </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <h1 id="h1"><span>Error al cargar</span></h1>
+    <div id="calc">
+      <div class="clearfix">
+        <div id="mask">
+          <input id="num" class="clearfix" type="text" size="12" autofocus>
+        </div>
+        <div id="btnMem">
+          <span id="toM" title="Guarda en memoria">↓ <sub>toM</sub></span>
+          <span id="fromM" title="presenta Memoria">↑ <sub>formM</sub></span>
+          <span id="cMem" title="borra Memoria">cMem</span>
+        </div>
+        <div id="memoria" contentEditable="true"></div>
+        
+      </div>
+      
+      <div id="teclado">
+        <button id="x2"       title="X elevado al cuadrado">x<sup>2</sup></button>
+        <button id="raiz"     title="Raíz cuadrada de X"><sup>2</sup>&#8730;</button>
+        <button id="clear"    title="Clear">C</button>
+
+        <button id="inverso"  title="Número inverso de X">1/x</button>
+        <button id="X"        title="Multiplicación">x</button>
+        <button id="div"      title="División">&#247;</button>
+
+        <button id="ent"      title="Devuelve la parte entera positiva">Int</button>
+        <button id="mas"      title="Suma">+</button>
+        <button id="menos"    title="Resta">-</button>
+
+        <button id="fact"     title="Resultado factorial de X">x!</button>
+        <button id="_2x"      title="resultado de 2 a la X potencia">2<sup>X</sup></button>
+        <button id="pot"      title="Eleva X a la potencia Y">x<sup>y</sup></button><br>
+        
+        <button id="sumatoria" title="Suma conjunto de números separados por coma">Σ<sub>n<sub>1</sub>,,,</sub><sub>n<sub>x</sub></sub></button>
+        <button id="producto" title="Multiplica conjunto de números separados por coma">&Pi;<sub>n<sub>1</sub>,,,</sub><sub>n<sub>x</sub></sub></button>
+        <button id="calcula" title="Calcula operación">=</button>
+      </div>
+    </div>
+  </div>
+<footer>
+  <a href="carousel.html">Inicio</a> - 
+  <a href="puzzle.html">Puzzle</a> - 
+  <span class="no-link">Calculadora</span>
+</footer>
+  <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
