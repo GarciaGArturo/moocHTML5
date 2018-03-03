@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="shortcut icon" href="http://www.iconj.com/gif_icon.php?pid=uz36u4v6r9" type="image/gif" />  
+  <link rel="shortcut icon" href="http://www.iconj.com/gif_icon.php?pid=uz36u4v6r9" type="image/gif" /> 
 
-  <title>Puzzle</title>
+  <title>Carrusel con calculadora y puzzle</title>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -17,12 +17,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js" type="text/javascript"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" rel="stylesheet" >
   <script src="carousel.js"></script>
-  <script>
-    $(function() {
-      $( "#sortable" ).sortable();
-      $( "#sortable" ).disableSelection();
-    });
-  </script>
 </head>
 
 <body>
@@ -36,42 +30,56 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a id="Wellcome" class="nav-link" href="carousel.html"><i class="fas fa-home"></i> Inicio </a>
+            <li class="nav-item active">
+              <span id="Wellcome" class="nav-link no-link"><i class="fas fa-home"></i> Inicio <span class="sr-only">(current)</span></span>
             </li>
             <li class="nav-item">
               <a id="calculadora" class="nav-link" href="calculadora.html"><i class="fas fa-calculator"></i> Calculadora </a>
             </li>
-            <li class="nav-item active">
-              <span id="puzzle" class="nav-link no-link"><i class="fas fa-puzzle-piece"></i> Puzzle <span class="sr-only">(current)</span></span>
+            <li class="nav-item">
+              <a id="puzzle" class="nav-link" href="puzzle.html"><i class="fas fa-puzzle-piece"></i> Puzzle </a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
     <section id="contenido" class="container">
-      <ul id="sortable">
-        <li><img src="rafael_8.jpg" /></li>
-        <li><img src="rafael_4.jpg" /></li>
-        <li><img src="rafael_6.jpg" /></li>
-        <li><img src="rafael_2.jpg" /></li>
-        <li><img src="rafael_9.jpg" /></li>
-        <li><img src="rafael_3.jpg" /></li>
-        <li><img src="rafael_7.jpg" /></li>
-        <li><img src="rafael_1.jpg" /></li>
-        <li><img src="rafael_5.jpg" /></li>
-      </ul>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class=""></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
+          <!-- <li data-target="#carouselExampleIndicators" data-slide-to="2" class=""></li> -->
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <a href="calculadora.html">
+              <img class="d-block w-100" alt="Calculadora" src="slide-calc.jpg" data-holder-rendered="true">
+            </a>
+          </div>
+          <div class="carousel-item active">
+            <a href="puzzle.html">
+              <img class="d-block w-100" alt="Puzzle" src="slide-puzz.jpg" data-holder-rendered="true">
+            </a>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
     </section>
   </div>
-  <div class="clearfix"></div>
 <footer>
-  <a href="carousel.html">Inicio</a> - 
-  <span class="no-link">Puzzle</span> - 
+  <span class="no-link">Inicio</span> - 
+  <a href="puzzle.html">Puzzle</a> - 
   <a href="calculadora.html">Calculadora</a>
 </footer>
-  <!-- Optional JavaScript -->
+  <!-- JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
-
