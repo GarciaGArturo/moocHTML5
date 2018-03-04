@@ -1,0 +1,55 @@
+
+<!doctype html>
+<html  lang="es">
+<head>
+  <!-- Metas y dependencias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="http://www.iconj.com/ico/d/z/dz1g38jxlw.ico" type="image/x-icon" />
+
+    <meta charset="utf-8"><title>CITAS</title> 
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">  
+
+    <!-- Javascript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/citas_slide.css" />
+    <script type="text/javascript" src="javascript/galeria.js" ></script>
+</head>
+
+<body>
+  <div class="contenido container-fluid">
+    <!-- crea la presentación -->
+      <section id="caja" class="row container">
+        <div class="textos col-lg-5 offset-lg-2 col-xl-5 offset-xl-2 col-md-8 col-sm-12 col-xs-12 d-flex flex-column justify-content-center text-right">
+          <p id="frase"></p>
+          <p id="persona"></p>
+        </div>
+        <img id="foto" class="col-lg-5 col-xl-5 col-md-4 col-sm-12 col-xs-12 img-fluid" alt="" />
+      </section>
+    <!-- la navegación inferior -->
+      <nav class="row my-4"> 
+        <ul id="selector" class="mx-auto"></ul>
+      </nav>
+    <!-- Botón de edición -->
+      <div class="row editar" id="editar"> 
+        <img src="images/carat-d-white.svg" alt="Editar el carrusel"/>
+      </div>
+    <!-- Caja de edición -->
+      <section id="datos">
+        <div contentEditable="true" id="persona_d"></div>
+        <div contentEditable="true" id="frase_d"></div>
+        <div contentEditable="true" id="foto_d"></div>
+        <div id="botones">
+          <ul>
+            <li><img src="images/edit-black.svg" alt="Editar cita actual" id="guardar"/></li>
+            <li><img src="images/plus-black.svg" alt="Añadir una cita" id="nuevo"/></li>
+            <li><img src="images/delete-black.svg" alt="Borrar cita actual" id="borrar"/></li>
+          </ul>
+        </div>
+      </section>
+  </div>
+</body>
+</html>
+
