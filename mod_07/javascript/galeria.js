@@ -41,6 +41,11 @@ var t, actual;
   $(function (){
     generar_selector(); // regenera los botoncitos
 
+      $("#cerrar").on("click", function(){
+          $("#datos").css("display", "none");
+          $("#cerrar").css("display", "none");
+          $("#editar").css("display", "block");
+      });
     // Abre con los datos actuales
       $("#editar").on("click", function(){
         clearTimeout(t); // para el tiempo
@@ -57,6 +62,9 @@ var t, actual;
             $("#borrar").css("display", "block");
             $("#guardar").css("display", "block");
 
+            $("#cerrar").css("display", "block");
+            $("#editar").css("display", "none");
+
           } else { // Si ya se borraron todos
               
               $("#persona_d").html("");
@@ -68,12 +76,17 @@ var t, actual;
               $("#nuevo").css("display", "block");
               $("#borrar").css("display", "none");
               $("#guardar").css("display", "none");
+
+              $("#cerrar").css("display", "block");
+              $("#editar").css("display", "none");
             }
       });
 
     // Añade una cita al final push()
       $("#nuevo").on("click", function(){
         $("#datos").css("display", "none"); // cierra el editor al añadir
+        $("#cerrar").css("display", "none");
+        $("#editar").css("display", "block");
 
         // Si hay un campo vacío
         if ( $("#persona_d").html() === ("<br>") || $("#persona_d").html() === ("") || $("#frase_d").html() === ("<br>") || $("#frase_d").html() === ("") ) {
@@ -104,6 +117,8 @@ var t, actual;
     // *** Borra la cita actual splice()
       $("#borrar").on("click", function(){
         $("#datos").css("display", "none"); // cierra el editor al borrar
+        $("#cerrar").css("display", "none");
+        $("#editar").css("display", "block");
 
         galeria.splice(actual,1); // borra el indice actual, solo uno
 
@@ -117,6 +132,8 @@ var t, actual;
     // Modifica una cita al final 
       $("#guardar").on("click", function(){
         $("#datos").css("display", "none"); // cierra el editor al editar
+        $("#cerrar").css("display", "none");
+        $("#editar").css("display", "block");
 
         // Si hay un campo vacío
         if ( $("#persona_d").html() === ("<br>") || $("#persona_d").html() === ("") || $("#frase_d").html() === ("<br>") || $("#frase_d").html() === ("") ) {

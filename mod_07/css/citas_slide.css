@@ -51,7 +51,7 @@
 		border: 1px solid #000000;
 		margin-bottom:0.2em;
 	}
-.editar {
+.editar, .cerrar {
 	background-color: #626262;
 	padding: 0.2em;
 	text-align: right;
@@ -61,11 +61,13 @@
 	flex-flow: row;
 	justify-content: flex-end;
 	}
-	.editar img {
+	.editar img, .cerrar img {
 		padding: 6px;
 		border-radius:50%;
+		width:20px;
+		height:20px;
 	}
-	.editar:hover > img {
+	.editar:hover > img, .cerrar:hover img {
 		background-color: #000000;
 	}
 .contenido #datos div#botones {
