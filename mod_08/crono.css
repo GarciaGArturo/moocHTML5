@@ -1,26 +1,8 @@
 ﻿
-html,body,h1,h2,h3,h4,h5,h6,p,ol,ul,li,pre,code,address,variable,form,fieldset,blockquote,a,cite,dl,dt,em,tr,th,td  {
- padding: 0;
- margin: 0;
- border: 0;
- font-size: 100%;
- font-weight: normal;
- vertical-align: baseline;
-}
-
-table { border-collapse: collapse; border-spacing: 0; }
-td,th,caption { font-weight: normal; text-align: left; }
-img,fieldset { border: 0; }
-ol,ul { padding-left: 1.4em; margin-left: 1.4em; list-style: none; }
-blockquote,q { quotes: none; }
-blockquote:before,blockquote:after,q:before,q:after { content:''; content: none; }
-input,button { font-size: inherit; font-family: inherit; }
-
-
 @font-face {
     font-family: digital-dream;
-    src: url('digitaldreamfatskew-webfont.woff') format('woff'),
-         url('digitaldreamfatskew-webfont.ttf') format('truetype');
+    src: url('https://cdn.rawgit.com/stoeffel/Tetris/f1cce798/resources/fonts/Digital-dream-fontfacekit/DIGITALDREAM-webfont.woff') format('woff'),
+         url('https://cdn.rawgit.com/stoeffel/Tetris/f1cce798/resources/fonts/Digital-dream-fontfacekit/DIGITALDREAM-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
