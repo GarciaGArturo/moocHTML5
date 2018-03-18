@@ -15,6 +15,19 @@ function cambiar()  { inf.html("&nbsp;"); if (!t) arrancar(); else parar(); };
 function listado()  { instante.html(instante.html() + ("<p>Parado en " + cl.html() + " seg.</p>")); };
 function inicializa() { cl.html("0:00.00"); instante.html(""); inf.html("&nbsp;"); localStorage.c="0.00"; minut = 0;  mostrar(); };
 
+
+function loadcssfile (css_file) {
+    var fileref=document.createElement("link");
+    fileref.setAttribute("rel", "stylesheet");
+    fileref.setAttribute("type", "text/css");
+    fileref.setAttribute("href", css_file);
+    if (typeof fileref!="undefined"){
+      document.getElementsByTagName("head")[0].appendChild(fileref);
+    }
+};
+
+
+
 if ("ontouchstart" in document.documentElement){
 	loadcssfile ("movil.css");  // Añadimos el estilo //
 	inf.html("<i>Un toque para Arrancar/Parar <br>y deslice para Inicializar</i>");
