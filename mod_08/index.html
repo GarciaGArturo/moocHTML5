@@ -1,37 +1,42 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<title>Cronómetro+Event Touch</title>
-
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
-	<link rel="stylesheet" href="crono.css" type="text/css">
+  <meta charset="utf-8">
+  <title>Cronómetro tap / swipe</title>
+  <link rel="stylesheet" href="crono.css" type="text/css">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	
-	<script type="text/javascript" src="http://zeptojs.com/zepto.min.js" > </script>
-	<script type="text/javascript" src="touch.js" > </script>
-	<script type="text/javascript" src="cronometro.js" > </script>
+
+  <script type="text/javascript" src="http://zeptojs.com/zepto.min.js" ></script>
+  <script type="text/javascript" src="touch.js" ></script>
+
+  <script type="text/javascript">
+    $(function(){ 
+      var t, cl = $("#crono"), even = $("#evento");
+
+      function mostrar()  { cl.html((+cl.html() + 0.1).toFixed(1)); };
+      function arrancar() { t=setInterval(mostrar, 100);};
+      function parar()    { clearInterval(t);  t=undefined; };
+      function cambiar()  { if (!t) arrancar(); else parar(); };
+
+      $("#cambiar").on('click', cambiar);
+      even.on('tap', cambiar);
+      $("#inicializar").on('click', function(){ cl.html("0.0"); });
+      even.on('swipe', function(){ cl.html("0.0"); });
+    });
+  </script>
 </head>
+<body id="evento">
 
-<body id="cuerpo">
-	<h2>Cronómetro</h2>
-	<div id="contenedor">
-		<div id="fondo">
-			<span id="crono" class="center-text">0:00.00</span>
-		</div>
-		<div>
-			<span id="info">&nbsp;</span>
-		</div>
-		 
-		<div id="botones"> 
-				<button type="button" id="cambiar"> Arrancar/Parar </button>
-		    <button type="button" id="inicializar"> Inicializar </button>
-		</div>
+    <section>
+    <h3>Cronómetro</h3>
 
-		<div id="instante"></div>
-	</div> 
+    <h3><span id="crono"> 0.0 </span> segundos </h3>
+
+    <div class="centrado">
+      <button type="button" id="cambiar"> arrancar/parar </button>
+      <button type="button" id="inicializar">  inicializar </button>
+    </div>
+  </section>
+  </article>
 </body>
 </html>
-
-    
