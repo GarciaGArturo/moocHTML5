@@ -42,6 +42,6 @@ body {
         display: none;
     }
     #mano2, #mano1 {
-      display: block;
+      display: inline-block;
     }
 }
