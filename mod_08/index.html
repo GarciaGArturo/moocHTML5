@@ -14,16 +14,18 @@
   <script type="text/javascript">
     $(function(){ 
       var t, cl = $("#crono"), even = $("body");
+      var img = document.getElementById("mano1");
+      var img2 = document.getElementById("mano2");
 
       function mostrar()  { cl.html((+cl.html() + 0.1).toFixed(1)); };
-      function arrancar() { t=setInterval(mostrar, 100);};
-      function parar()    { clearInterval(t);  t=undefined; };
+      function arrancar() { t=setInterval(mostrar, 100); img.src='tap.png';img2.src=''; };
+      function parar()    { clearInterval(t);  t=undefined; img.src='swipe.png'; img2.src='tap.png'; };
       function cambiar()  { if (!t) arrancar(); else parar(); };
 
       $("#cambiar").on('click', cambiar);
       even.on('tap', cambiar);
-      $("#inicializar").on('click', function(){ cl.html("0.0"); });
-      even.on('swipe', function(){ cl.html("0.0"); });
+      $("#inicializar").on('click', function(){ cl.html("0.0"); img.src='tap.png'; img2.src=''; });
+      even.on('swipe', function(){ cl.html("0.0"); img.src='tap.png';img2.src=''; });
     });
   </script>
 </head>
@@ -36,6 +38,7 @@
       <span id="crono"> 0.0 </span>
       <br><br> segundos
     </h2>
+    <img id="mano1" src="tap.png" alt=""><img id="mano2" src="" alt="">
 
     <div class="centrado">
       <button type="button" id="cambiar"> arrancar/parar </button>

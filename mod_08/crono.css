@@ -7,7 +7,7 @@
 }
 html,body {height: 90%;}
 body {
-  background-color: #c0c0c0;
+  background-color: #f7f8f8;
   color: #444;
   font-family: Verdana, Arial;
   display: flex;
@@ -17,10 +17,11 @@ body {
 }
 #crono {
   font-family: digital-dream, monospace, Arial, sans-serif;
-  font-size: 5em;
+  font-size: 3em;
   border: #898888 3px double;
-  padding: 7px;
-  border-radius: 5px;
+  padding: 15px;
+  border-radius: 15px;
   background-color: #FFF;
   box-shadow: 0px 2px 3px #000;
+  text-shadow: 1px 2px 3px #888;
 }
