@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Ejercicio Mod08Tema02: Cronómetro tap / swipe</title>
+  <link href="https://cmrs.neocities.org/WysSouthPark.png" rel="icon" type="image/x-icon" />
+  <script type="text/javascript" src="zepto.min.js" ></script>
+  <script type="text/javascript" src="touch.js" ></script>
+  <style type="text/css">
+    body {
+      background-color: black;
+      /*color: #CCF279;*/
+      color: white;
+      font-family: Arial, Verdana;
+      margin: auto;
+      padding: 15px;
+    }
+    h1, h2, h3, .centrado {text-align: center;}
+    h1{
+      background-color: #4E4E4E;
+      color: #E6E6FA;;
+      padding: 20px;
+      font-size: 23px;
+      border-radius: 5px;
+      box-shadow: 1px 1px 5px green;
+      text-shadow: 1px -1px blue;
+    }
+    h2{
+      padding: 10px;
+      color: #E7E5E5;
+      background-color: #7A7878;
+      font: 400 18px Arial ,Verdana;
+      border-radius: 5px;
+      box-shadow: 1px 1px 5px green;
+      text-shadow: 1px -1px blue;
+    }
+    h2 span{
+      color: blue;
+      text-shadow: 1px -1px white;
+    }
+    h3{
+      color: green;
+      background-color: white;
+      border-radius: 3px;
+      padding: 5px;
+      margin: 10px 5%;
+    }
+    p, li{font-size: 105%;}
+    button{
+      margin-right: 20px;
+      padding: 2px;
+      color: white;
+      background-color: blue;
+      font: 400 18px Arial ,Verdana;
+      border-radius: 5px;
+      box-shadow: 1px 1px 1px black;
+      text-shadow: 1px -1px green;
+    }
+    a {
+      text-decoration: none;
+      color: #8DD6E9;
+    }
+    a:hover {color: gray;}
+  </style>
+  <script type="text/javascript">
+    $(function(){ 
+      var t, cl = $("#crono"), even = $("#evento");
+
+      function mostrar()  { cl.html((+cl.html() + 0.1).toFixed(1)); };
+      function arrancar() { t=setInterval(mostrar, 100);};
+      function parar()    { clearInterval(t);  t=undefined; };
+      function cambiar()  { if (!t) arrancar(); else parar(); };
+
+      //$("#cambiar").on('click', cambiar);
+      even.on('tap', cambiar);
+      //$("#inicializar").on('click', function(){ cl.html("0.0"); });
+      even.on('swipe', function(){ cl.html("0.0"); });
+    });
+  </script>
+</head>
+<body id="evento">
+    <section>
+    <h3>Cronómetro</h3>
+
+    <h3><span id="crono"> 0.0 </span> segundos </h3>
+
+    <!--<div class="centrado">
+      <button type="button" id="cambiar"> arrancar/parar </button>
+      <button type="button" id="inicializar">  inicializar </button>
+    </div>-->
+  </section>
+
+</body>
+</html>
