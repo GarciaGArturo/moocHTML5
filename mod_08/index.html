@@ -13,7 +13,7 @@
 
   <script type="text/javascript">
     $(function(){ 
-      var t, cl = $("#crono"), even = $("body");
+      var t, cl = $("#crono"), evento = $("body");
       var img = document.getElementById("mano1");
       var img2 = document.getElementById("mano2");
 
@@ -22,10 +22,10 @@
       function parar()    { clearInterval(t);  t=undefined; img2.src='tap.png'; img.src='swipe.png'; };
       function cambiar()  { if (!t) arrancar(); else parar(); };
 
-      // $("#cambiar").on('click', cambiar);
-      even.on('tap', cambiar);
-      // $("#inicializar").on('click', function(){ cl.html("0.0"); img2.src=''; img.src='tap.png'; });
-      even.on('swipe', function(){ cl.html("0.0"); img2.src=''; img.src='tap.png'; });
+      $("#cambiar").on('click', cambiar);
+      evento.on('tap', cambiar);
+      $("#inicializar").on('click', function(){ cl.html("0.0"); img2.src=''; img.src='tap.png'; });
+      evento.on('swipe', function(){ cl.html("0.0"); img2.src=''; img.src='tap.png'; });
     });
   </script>
 </head>
