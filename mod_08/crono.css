@@ -5,22 +5,19 @@
     font-weight: normal;
     font-style: normal;
 }
-html,body {height: 100%;}
+html,body {height: 90%;}
 body {
-  background-color: white;
+  background-color: #c0c0c0;
   color: #444;
   font-family: Verdana, Arial;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  text-align: center;
 }
 #crono {
-  position: relative; 
-  width: 45%; 
-  left: 0;
-  top: 42%;
-  font-family: digital-dream,Arial,sans-serif;
-  font-size: 265%;
-  color: #000;
+  font-family: digital-dream, monospace, Arial, sans-serif;
+  font-size: 5em;
   border: #898888 3px double;
   padding: 7px;
   border-radius: 5px;
