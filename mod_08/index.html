@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>Cronómetro tap / swipe</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
   <link rel="stylesheet" href="crono.css" type="text/css">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
@@ -11,7 +13,7 @@
 
   <script type="text/javascript">
     $(function(){ 
-      var t, cl = $("#crono"), even = $("#evento");
+      var t, cl = $("#crono"), even = $("body");
 
       function mostrar()  { cl.html((+cl.html() + 0.1).toFixed(1)); };
       function arrancar() { t=setInterval(mostrar, 100);};
@@ -25,7 +27,7 @@
     });
   </script>
 </head>
-<body id="evento">
+<body id="cuerpo">
 
     <section>
     <h3>Cronómetro</h3>
