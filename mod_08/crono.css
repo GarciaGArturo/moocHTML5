@@ -25,3 +25,23 @@ body {
   box-shadow: 0px 2px 3px #000;
   text-shadow: 1px 2px 3px #888;
 }
+.grande { 
+  display: block;
+  margin: auto;
+}
+.grande p {
+  max-width: 320px;
+  margin: 1em auto;
+}
+#mano2, #mano1 {
+  display: none;
+  margin: auto;
+}
+@media screen and (max-width: 768px) {
+    .grande {
+        display: none;
+    }
+    #mano2, #mano1 {
+      display: block;
+    }
+}

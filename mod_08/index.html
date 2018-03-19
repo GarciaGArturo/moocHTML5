@@ -18,14 +18,14 @@
       var img2 = document.getElementById("mano2");
 
       function mostrar()  { cl.html((+cl.html() + 0.1).toFixed(1)); };
-      function arrancar() { t=setInterval(mostrar, 100); img.src='tap.png';img2.src=''; };
-      function parar()    { clearInterval(t);  t=undefined; img.src='swipe.png'; img2.src='tap.png'; };
+      function arrancar() { t=setInterval(mostrar, 100); img2.src=''; img.src='tap.png'; };
+      function parar()    { clearInterval(t);  t=undefined; img2.src='tap.png'; img.src='swipe.png'; };
       function cambiar()  { if (!t) arrancar(); else parar(); };
 
       $("#cambiar").on('click', cambiar);
       even.on('tap', cambiar);
-      $("#inicializar").on('click', function(){ cl.html("0.0"); img.src='tap.png'; img2.src=''; });
-      even.on('swipe', function(){ cl.html("0.0"); img.src='tap.png';img2.src=''; });
+      $("#inicializar").on('click', function(){ cl.html("0.0"); img2.src=''; img.src='tap.png'; });
+      even.on('swipe', function(){ cl.html("0.0"); img2.src=''; img.src='tap.png'; });
     });
   </script>
 </head>
@@ -38,12 +38,15 @@
       <span id="crono"> 0.0 </span>
       <br><br> segundos
     </h2>
-    <img id="mano1" src="tap.png" alt=""><img id="mano2" src="" alt="">
-
-    <div class="centrado">
+    <img id="mano2" src="" alt=""><img id="mano1" src="tap.png" alt="">
+    
+    <div class="grande">
       <button type="button" id="cambiar"> arrancar/parar </button>
       <button type="button" id="inicializar">  inicializar </button>
+      <p>Ver el ejercicio en un smartphone o en un dispositivo tactil y achique la pantalla para visualizar el efecto "Tap / Swipe"</p>
+      <img class="grande" src="qr.gif" alt="ver en SmartPhone">
     </div>
+
   </section>
   </article>
 </body>
