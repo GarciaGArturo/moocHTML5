@@ -22,9 +22,9 @@
       function parar()    { clearInterval(t);  t=undefined; img2.src='tap.png'; img.src='swipe.png'; };
       function cambiar()  { if (!t) arrancar(); else parar(); };
 
-      $("#cambiar").on('click', cambiar);
+      // $("#cambiar").on('click', cambiar);
       even.on('tap', cambiar);
-      $("#inicializar").on('click', function(){ cl.html("0.0"); img2.src=''; img.src='tap.png'; });
+      // $("#inicializar").on('click', function(){ cl.html("0.0"); img2.src=''; img.src='tap.png'; });
       even.on('swipe', function(){ cl.html("0.0"); img2.src=''; img.src='tap.png'; });
     });
   </script>
@@ -41,8 +41,8 @@
     <img id="mano2" src="" alt=""><img id="mano1" src="tap.png" alt="">
     
     <div class="grande">
-      <button type="button" id="cambiar"> arrancar/parar </button>
-      <button type="button" id="inicializar">  inicializar </button>
+      <!-- <button type="button" id="cambiar"> arrancar/parar </button> -->
+      <!-- <button type="button" id="inicializar">  inicializar </button> -->
       <p>Ver el ejercicio en un smartphone o en un dispositivo tactil y achique la pantalla para visualizar el efecto "Tap / Swipe"</p>
       <img class="grande" src="qr.gif" alt="ver en SmartPhone">
     </div>
