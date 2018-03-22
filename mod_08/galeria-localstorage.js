@@ -266,6 +266,13 @@
                   generar_selector();
                 // Reinicia las diapositivas
                   select(0);
+                // cierra el editor al editar
+            // cierra zona de datos
+            $("#datos").css("display", "none");
+          // esconde el mismo botón
+            $("#cerrar").css("display", "none");
+          // presenta la barra editar
+            $("#editar").css("display", "block");
               }
             // Muestra las diapositivas
               select(actual);
