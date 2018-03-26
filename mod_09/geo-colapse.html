@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <title>GMaps.js &mdash; Geolocation</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="http://www.iconj.com/ico/7/x/7xxtfmqljs.ico" type="image/x-icon" rel="shortcut icon" />
+    <link src="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"></link>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyBtyyPJ4eyMuelQlNFpCQkKHlice9pMFV0"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js"></script>
+  <style>
+    body{
+      font-family: 'Droid Sans', 'Helvetica', Arial, sans-serif;
+    }
+    #latlng{
+      display: block;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+    }
+    #map{
+      display: block;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 4rem;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgb(242,239,243);
+      background-image: url(bg.jpg);: 
+    }
+   #reload  {
+      background-color: #20ED01;
+      color: darkgreen;
+      border-radius: 0.5em;
+      padding: 0.3em 0.5em;
+      cursor: pointer;
+    }
+    #colapse {
+      background-color: steelblue;
+      color: #FFF;
+      border-radius: 0.5em;
+      padding: 0.3em 0.5em;
+      cursor: pointer;
+    }
+    </style>
+  <script type="text/javascript">
+    // Variables globales
+      var map,  lati, long, posicion, ruta_inicial = [], ruta = [];
+
+    // On ready
+    $(function(){
+
+      // Crea la BD si no la hay
+        localStorage.ruta = ( localStorage.ruta || JSON.stringify(ruta) );
+
+      // (successFunction) Si el navegador soporta geolocalización
+        function successFunction(position) {
+          // Globaliza la variable para usarla
+          posicion = position;
+          // Guarda la popsición inicial
+          ruta_inicial[0] = [position.coords.latitude, position.coords.longitude];
+
+          // Si hay BD ...
+          if (verificaBD()) {
+            // Avisa de la existencia de una BD anterior
+            alert("Se cargará una ruta anterior \nPara borrarla, click en el botón \"Inicializar\"");
+
+            // Recupera la BD anterior
+            ruta = JSON.parse(localStorage.ruta);
+
+            // Coordenadas de origen
+            lati = ruta[0][0]; 
+            long = ruta[0][1];
+
+            // Genera el mapa con las características centrando lat y lng
+              map = new GMaps({ 
+                el: '#map',             // el mapa
+                lat: lati,              // latitud
+                lng: long,              // longitud
+                zoom: 16,               // zoom del mapa
+                click: enlazarMarcador, // evento click
+                tap: enlazarMarcador    // evento tactil
+              });
+
+            // Pone el marcador inicial
+              map.addMarker({ lat: lati, lng: long})
+
+            // Loop para poner cada marcador y la ruta
+              ruta.forEach(function(elem,i) {
+                // muestra ruta entre marcas anteriores y actuales
+                map.drawRoute({
+                  // origen en coordenadas anteriores
+                  origin: [lati, long],  
+                  // destino en coordenadas del click o toque actual
+                  destination: [ruta[i][0], ruta[i][1]],
+                  // Modo de camino
+                  travelMode: 'walking',
+                  // Color de la línea
+                  strokeColor: '#20ED01',
+                  // Opacidad de la línia
+                  strokeOpacity: 0.9,
+                  // Ancho de la línea
+                  strokeWeight: 4,
+                });
+
+              // guarda coords nuevas para marca siguiente
+                lati = ruta[i][0];   
+                long = ruta[i][1];
+
+              // Pone un marcador nuevo
+                map.addMarker({ lat: ruta[i][0], lng: ruta[i][1]});
+              });
+
+          // Si no hay ruta anterior guardada
+          } else { 
+            // alert("no hay BD \n   >.<");
+            sin_bd(posicion);
+            }
+        }
+
+      // (sin_bd) comienza si no hay una BD
+        function sin_bd (position) {
+          // Extrae latitud y longitud en las variables lati y long
+            lati = position.coords.latitude;
+            long = position.coords.longitude;
+            // inserta la posición actual
+              ruta.push([lati, long]);
+
+          // Genera el mapa con las características centrando lat y lng
+            map = new GMaps({ 
+              el: '#map',             // el mapa
+              lat: lati,              // latitud
+              lng: long,              // longitud
+              zoom: 16,               // zoom del mapa
+              click: enlazarMarcador, // evento click
+              tap: enlazarMarcador    // evento tactil
+            });
+          // pone marcador en mapa
+            map.addMarker({ lat: lati, lng: long});  
+        }
+
+      // (enlazarMarcador) Dibuja y almacena la ruta en el mapa 
+        function enlazarMarcador(e){
+          // Recupera los últimos valores
+            lat = lati; 
+            lng = long;
+
+          // muestra ruta entre marcas anteriores y actuales
+          map.drawRoute({
+            // origen en coordenadas anteriores
+            origin: [lat, lng],  
+            // destino en coordenadas del click o toque actual
+            destination: [e.latLng.lat(), e.latLng.lng()],
+            // Modo de camino
+            travelMode: 'walking',
+            // Color de la línea
+            strokeColor: '#20ED01',
+            // Opacidad de la línia
+            strokeOpacity: 0.9,
+            // Ancho de la línea
+            strokeWeight: 4
+          });
+
+          // guarda coords nuevas para marca siguiente
+            lati = e.latLng.lat();   
+            long = e.latLng.lng();
+
+          // Pone un marcador nuevo
+            map.addMarker({ lat: lati, lng: long});
+          // inserta la última coord al final del array
+            ruta.push([lati, long]);
+          // Almacena la ruta
+            localStorage.ruta = JSON.stringify(ruta);
+        }
+
+      // (verificaBD) Verifica si ya hay una BD anterior
+        function verificaBD () {
+            if (localStorage.ruta != "[]") {
+              // Si ya hay BD: ...
+              //alert(localStorage.ruta);
+              ruta = JSON.parse(localStorage.ruta);
+              
+              return (true);
+            } else { return (false); }
+        } 
+
+      // (errorFunction) Si el navegador no soporta geolocalización
+        function errorFunction(position) {
+          alert('Error! \n Su navegador no soporta Geolocation');
+        }
+
+      // (#reload) Si se quiere recargar
+        $("#reload").on("click", function() {
+          var resp = confirm("¿Desea borrar la actual ruta?")
+          if (resp === true) {
+            ruta = new Array();
+            localStorage.ruta = JSON.stringify(ruta);
+            sin_bd(posicion);
+          }
+        });
+
+      // (#colapse) Si se quiere recargar
+        $("#colapse").on("click", function() {
+          // Si hay más de dos ubicaciones
+          if (ruta.length > 2) {
+            // Primero pregunta
+            var resp = confirm("¿Desea compactar la actual ruta?");
+
+            if (resp === true) {
+
+              // Coordenadas de origen
+                lati = ruta_inicial[0][0]; 
+                long = ruta_inicial[0][1];
+              // Últimas coordenadas
+                lati_ultimo = ruta[ruta.length-1][0];
+                long_ultimo = ruta[ruta.length-1][1];
+
+                // Genera el mapa con las características centrando lat y lng
+                  map = new GMaps({ 
+                    el: '#map',             // el mapa
+                    lat: lati,              // latitud
+                    lng: long,              // longitud
+                    zoom: 16,               // zoom del mapa
+                    click: enlazarMarcador, // evento click
+                    tap: enlazarMarcador    // evento tactil
+                  });
+
+                // Pone el marcador inicial
+                  map.addMarker({ lat: lati, lng: long})
+
+                    // muestra ruta entre marcas anteriores y actuales
+                    map.drawRoute({
+                      // origen en coordenadas anteriores
+                      origin: [lati, long],  
+                      // destino en coordenadas del click o toque actual
+                      destination: [lati_ultimo, long_ultimo],
+                      // Modo de camino
+                      travelMode: 'walking',
+                      // Color de la línea
+                      strokeColor: '#20ED01',
+                      // Opacidad de la línia
+                      strokeOpacity: 0.9,
+                      // Ancho de la línea
+                      strokeWeight: 4,
+                    });
+
+                  // Pone un marcador nuevo
+                    map.addMarker({ lat: lati_ultimo, lng: long_ultimo});
+
+              // rehace el array de la ruta con el origen y el final
+                ruta = [[lati, long], [lati_ultimo, long_ultimo]];
+              // Guarda la BD
+                localStorage.ruta = JSON.stringify(ruta);
+            }
+          // Si hay menos de dos ubicaciones
+          } else {
+              alert ( "No es necesario compactar" );
+            }
+        });
+
+      // (main) Verificamos si el navegador soporta geolocalización
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+        // Si no lo soporta
+        } else {
+          alert('Parece que la geolocalización, que se requiere para esta página, no está habilitada en su navegador. Utilice un navegador que lo admita.');
+        }
+    });
+  </script>
+</head>
+<body>
+  <h2>Geoloc <small><button id="reload"> <img src="reload.svg" alt=""> Inicializar</button> <button id="colapse"> <img src="colapse.svg" alt=""> Compactar</button></small> </h2>
+  <div id="map"></div>
+ </body>
+</html>
